@@ -61,7 +61,13 @@ jobs:
       - name: 🏗️ Preparar arquivos
         run: |
           mkdir -p public
-          cp *.html *.js *.json *.m3u *.xml.gz public/
+          # Copia apenas os arquivos existentes, ignorando os que não existem
+          cp -f *.html *.js *.json public/ 2>/dev/null || true
+          cp -f *.m3u *.xml.gz public/ 2>/dev/null || true
+
+          # Exibe o conteúdo copiado (para depuração)
+          echo "Arquivos copiados para a pasta public:"
+          ls -lh public || true
 
       - name: 🚀 Deploy no GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
