@@ -707,7 +707,7 @@
           'm3u': { icon: '<i class="fas fa-list" aria-hidden="true"></i>', type: 'Playlist M3U', category: 'm3u' },
           'm3u8': { icon: '<i class="fas fa-list" aria-hidden="true"></i>', type: 'Playlist M3U', category: 'm3u' },
           
-          // Guias EPG
+          // Guias EPG - CORREÇÃO APLICADA AQUI
           'xml': { icon: '<i class="fas fa-calendar-alt" aria-hidden="true"></i>', type: 'Guia EPG', category: 'epg' },
           'xml.gz': { icon: '<i class="fas fa-calendar-alt" aria-hidden="true"></i>', type: 'Guia EPG', category: 'epg' },
           'xmltv': { icon: '<i class="fas fa-calendar-alt" aria-hidden="true"></i>', type: 'Guia EPG', category: 'epg' },
@@ -873,7 +873,7 @@
         return fileCache.fileTypeMap[fileExt] || fileCache.fileTypeMap.default;
       };
       
-      // Função para filtrar arquivos otimizada
+      // Função para filtrar arquivos otimizada - CORREÇÃO APLICADA AQUI
       const filterFiles = (files, searchTerm = '', typeFilter = 'all') => {
         return files.filter(file => {
           const matchesSearch = file.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -887,8 +887,17 @@
           }
           
           const filterTypes = typeFilter.split(',');
-          const fileExt = file.name.split('.').pop().toLowerCase();
-          return matchesSearch && filterTypes.includes(fileExt);
+          const fileNameLower = file.name.toLowerCase();
+          
+          // Verifica se o arquivo tem alguma das extensões do filtro
+          return matchesSearch && filterTypes.some(ext => {
+            // Para extensões compostas como "xml.gz", verifica se o arquivo termina com essa extensão
+            if (ext.includes('.')) {
+              return fileNameLower.endsWith('.' + ext);
+            }
+            // Para extensões simples, verifica a extensão normal
+            return fileNameLower.endsWith('.' + ext);
+          });
         });
       };
       
