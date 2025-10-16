@@ -1,0 +1,71 @@
+name: "👇👆 Deployment Atualização Automática"
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 3 * * *'  # Diariamente às 00:00 BRT (03:00 UTC)
+  workflow_dispatch:
+
+env:
+  TZ: America/Fortaleza
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  download_and_update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: ⚙️ Instalar dependências
+        run: pip install requests
+
+      - name: 📥 Baixar playlists
+        run: python deployment.py
+
+      - name: 📊 Gerar metadados
+        run: node generate_metadata.js
+
+      - name: 💾 Commit das alterações
+        if: success()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Garante sincronização com o remoto, mas mantendo os arquivos locais
+          git fetch origin main
+          git pull origin main --strategy=ours --allow-unrelated-histories
+
+          git add .
+          git commit -m "🔄 Atualização automática - $(date +'%d/%m/%Y %H:%M')" || echo "Sem alterações para commit"
+          git push origin main
+
+  deploy:
+    needs: download_and_update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 🏗️ Preparar arquivos
+        run: |
+          mkdir -p public
+          cp *.html *.js *.json *.m3u *.xml.gz public/
+
+      - name: 🚀 Deploy no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
