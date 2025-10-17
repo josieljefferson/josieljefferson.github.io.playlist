@@ -22,6 +22,9 @@ const config = {
     'node_modules',
     'package.json',
     'downloaded_files.txt',
+    'deployment.py',
+    'downloads_files.py',
+    'playlists.py',
     'package-lock.json'
   ],
   includedExtensions: [
