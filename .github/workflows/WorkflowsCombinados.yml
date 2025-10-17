@@ -39,27 +39,27 @@ jobs:
 
       - name: 🗑️ Excluir arquivos da raiz
         run: |
-          rm -f 3wk1y24kx7uzdevxygz7
-          rm -f 782dyqdrqkh1xegen4zp
-          rm -f PiauiTV.m3u
-          rm -f epgbrasil.m3u
-          rm -f epgbrasil.xml
-          rm -f epgbrasil.xml.gz
-          rm -f epgbrasilportugal.m3u
-          rm -f epgbrasilportugal.xml
-          rm -f epgbrasilportugal.xml.gz
-          rm -f epgportugal.m3u
-          rm -f epgportugal.xml
-          rm -f epgportugal.xml.gz
-          rm -f jq2zy9epr3bwxmgwyxr5
-          rm -f m3u4u_proton.me.m3u
-          rm -f m3u@proton.me.m3u
-          rm -f piauitv.m3u
-          rm -f playlist.m3u
-          rm -f playlists.log
-          rm -f playlists.m3u
-          rm -f pornstars.m3u
-          rm -f proton.m3u
+#          rm -f 3wk1y24kx7uzdevxygz7
+#          rm -f 782dyqdrqkh1xegen4zp
+#          rm -f PiauiTV.m3u
+#          rm -f epgbrasil.m3u
+#          rm -f epgbrasil.xml
+#          rm -f epgbrasil.xml.gz
+#          rm -f epgbrasilportugal.m3u
+#          rm -f epgbrasilportugal.xml
+#          rm -f epgbrasilportugal.xml.gz
+#          rm -f epgportugal.m3u
+#          rm -f epgportugal.xml
+#          rm -f epgportugal.xml.gz
+#          rm -f jq2zy9epr3bwxmgwyxr5
+#          rm -f m3u4u_proton.me.m3u
+#          rm -f m3u@proton.me.m3u
+#          rm -f piauitv.m3u
+#          rm -f playlist.m3u
+#          rm -f playlists.log
+#          rm -f playlists.m3u
+#          rm -f pornstars.m3u
+#          rm -f proton.m3u
 
       - name: ✅ Commit e Push
         env:
