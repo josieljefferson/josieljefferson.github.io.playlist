@@ -5,8 +5,8 @@ name: 🧹Limpar Execuções de Workflow Antigas (1h)
 on:
   # ⏰ Disparo automático com base em agendamento (CRON)
   schedule:
-    # Executa a cada 12 horas, sempre no minuto 1 (ex: 01:00 e 13:00 UTC)
-    - cron: '1 */12 * * *'
+    # Executa a cada 8 horas, sempre no minuto 1 (ex: 01:00 e 13:00 UTC)
+    - cron: '1 */8 * * *'
 
   # 🧑‍💻 Permite execução manual pela interface do GitHub (botão "Run workflow")
   workflow_dispatch:
