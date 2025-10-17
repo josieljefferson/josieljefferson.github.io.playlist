@@ -335,6 +335,9 @@ def main() -> None:
             "playlist.m3u": "https://gitlab.com/josieljefferson12/playlists/-/raw/main/playlist.m3u",
             "playlists.m3u": "https://gitlab.com/josielluz/playlists/-/raw/main/playlists.m3u",
             "pornstars.m3u": "https://gitlab.com/josieljefferson12/playlists/-/raw/main/pornstars.m3u",
+            "adults.m3u": "https://raw.githubusercontent.com/josieljefferson/josieljefferson.github.io.playlist/refs/heads/main/playlists/adults.m3u",
+            "playlists.m3u8": "https://raw.githubusercontent.com/josieljefferson/josieljefferson.github.io.playlist/refs/heads/main/playlists/playlists.m3u",
+            "PiauiTV.m3u8": "https://raw.githubusercontent.com/josieljefferson/josieljefferson.github.io.playlist/refs/heads/main/playlists/piauitv.m3u",
         },
         "xml.gz": {
             "epgbrasil.xml.gz": "http://m3u4u.com/epg/3wk1y24kx7uzdevxygz7",

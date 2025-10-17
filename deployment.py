@@ -13,6 +13,11 @@ PLAYLISTS = {
     "http://m3u4u.com/m3u/jq2zy9epr3bwxmgwyxr5": "epgportugal.m3u",
     "http://m3u4u.com/epg/jq2zy9epr3bwxmgwyxr5": "epgportugal.xml.gz",
 
+    # URLs de arquivos hospedados no GitHub (listas M3U personalizadas)
+    "https://raw.githubusercontent.com/josieljefferson/josieljefferson.github.io.playlist/refs/heads/main/playlists/adults.m3u": "adults.m3u",
+    "https://raw.githubusercontent.com/josieljefferson/josieljefferson.github.io.playlist/refs/heads/main/playlists/playlists.m3u": "playlists.m3u8",
+    "https://raw.githubusercontent.com/josieljefferson/josieljefferson.github.io.playlist/refs/heads/main/playlists/piauitv.m3u": "PiauiTV.m3u8",
+
     # URLs de arquivos hospedados no GitLab (listas M3U personalizadas)
     "https://gitlab.com/josieljefferson12/playlists/-/raw/main/playlist.m3u": "playlist.m3u",
     "https://gitlab.com/josielluz/playlists/-/raw/main/playlists.m3u": "playlists.m3u",
