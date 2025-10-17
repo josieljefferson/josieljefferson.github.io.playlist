@@ -25,6 +25,8 @@ const config = {
     'deployment.py',
     'downloads_files.py',
     'playlists.py',
+    'requirements.txt',
+    'playlists.log',
     'package-lock.json'
   ],
   includedExtensions: [
