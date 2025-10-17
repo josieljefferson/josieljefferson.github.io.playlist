@@ -55,7 +55,7 @@ def download_file(url, filename):
                     f.write(chunk)
         
         # 📝 Add timestamp footer
-        timestamp = datetime.now().strftime("# Atualizado em %d/%m/%Y - %H:%M:%S BRT\n")
+        timestamp = datetime.now().strftime("\n\n# Atualizado em %d/%m/%Y - %H:%M:%S BRT\n")
         with open(filename, 'a', encoding='utf-8') as f:
             f.write(timestamp)
             
