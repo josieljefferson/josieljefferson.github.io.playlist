@@ -37,7 +37,7 @@ def download_file(url, filename):
         print(f"✅ Arquivo baixado: {filename}")
 
         # Gera uma string com a data e hora atual no formato personalizado
-        timestamp = datetime.now().strftime("# Atualizado em %d/%m/%Y - %H:%M:%S BRT\n")
+        timestamp = datetime.now().strftime("\n\n# Atualizado em %d/%m/%Y - %H:%M:%S BRT\n")
 
         # Abre novamente o arquivo em modo de adição ('a'), agora como texto, para incluir o timestamp no final
         with open(filename, 'a') as f:
